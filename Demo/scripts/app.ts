@@ -1,28 +1,22 @@
-class Greeter {
-    element: HTMLElement;
-    span: HTMLElement;
-    timerToken: number;
-    
-    constructor (element: HTMLElement) { 
-        this.element = element;
-        this.element.innerText += "The time is: ";
-        this.span = document.createElement('span');
-        this.element.appendChild(this.span);
-        this.span.innerText = new Date().toUTCString();
-    }
+/// <reference path="knockout.d.ts" />
+/// <reference path="services/logApiClient.ts" />
+/// <reference path="viewModels/logViewer.ts" />
+/// <reference path="interfaces.ts" />
 
-    start() {
-        this.timerToken = setInterval(() => this.span.innerText = new Date().toUTCString(), 500);
-    }
+module App {
+    export class Main {
+        private client: ILogApiClient;
+        viewModel: App.ViewModels.LogViewer;
 
-    stop() {
-        clearTimeout(this.timerToken);
-    }
+        constructor(client: ILogApiClient) {
+            this.client = client;
+            this.viewModel = new App.ViewModels.LogViewer();
+            ko.applyBindings(this.viewModel);
 
+            this.client.search(this.viewModel.loadSearchResults);
+        };
+    }
 }
 
-window.onload = () => {
-    var el = document.getElementById('content');
-    var greeter = new Greeter(el);
-    greeter.start();
-};
+var client = new App.Services.LogApiClient("http://localhost/api/logs")
+var app = new App.Main(client);

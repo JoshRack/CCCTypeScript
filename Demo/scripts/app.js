@@ -1,25 +1,20 @@
-var Greeter = (function () {
-    function Greeter(element) {
-        this.element = element;
-        this.element.innerText += "The time is: ";
-        this.span = document.createElement('span');
-        this.element.appendChild(this.span);
-        this.span.innerText = new Date().toUTCString();
-    }
-    Greeter.prototype.start = function () {
-        var _this = this;
-        this.timerToken = setInterval(function () {
-            return _this.span.innerText = new Date().toUTCString();
-        }, 500);
-    };
-    Greeter.prototype.stop = function () {
-        clearTimeout(this.timerToken);
-    };
-    return Greeter;
-})();
-window.onload = function () {
-    var el = document.getElementById('content');
-    var greeter = new Greeter(el);
-    greeter.start();
-};
+/// <reference path="knockout.d.ts" />
+/// <reference path="services/logApiClient.ts" />
+/// <reference path="viewModels/logViewer.ts" />
+/// <reference path="interfaces.ts" />
+var App;
+(function (App) {
+    var Main = (function () {
+        function Main(client) {
+            this.client = client;
+            this.viewModel = new App.ViewModels.LogViewer();
+            ko.applyBindings(this.viewModel);
+            this.client.search(this.viewModel.loadSearchResults);
+        }
+        return Main;
+    })();
+    App.Main = Main;    
+})(App || (App = {}));
+var client = new App.Services.LogApiClient("http://localhost/api/logs");
+var app = new App.Main(client);
 //@ sourceMappingURL=app.js.map

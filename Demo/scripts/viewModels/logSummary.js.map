@@ -1,0 +1,1 @@
+{"version":3,"file":"logSummary.js","sources":["logSummary.ts"],"names":["App","App.ViewModels","App.ViewModels.LogSummary","App.ViewModels.LogSummary.constructor"],"mappings":"AAEA,IAAO,GAAG;AAMT,CAND,UAAO,GAAG;IAFVA,yCAAyCA;KAElCA,UAAIA,UAAUA;QACjBC;YAAAC;AAICA,YAADA;AAACA,QAADA,CAACA,IAAAD;QAJDA,mCAICA,QAAAA;IACLA,CAACA,2CAAAD;IANMA;AAMNA,CAAAA,qBAAA"}

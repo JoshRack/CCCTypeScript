@@ -26,9 +26,74 @@
     <Content Include="scripts\app.js">
       <DependentUpon>app.ts</DependentUpon>
     </Content>
+    <Content Include="scripts\app.min.js">
+      <DependentUpon>app.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="scripts\interfaces.ts" />
+    <Content Include="scripts\interfaces.js">
+      <DependentUpon>interfaces.ts</DependentUpon>
+    </Content>
+    <Content Include="scripts\interfaces.min.js">
+      <DependentUpon>interfaces.ts</DependentUpon>
+    </Content>
+    <Content Include="scripts\jquery.d.ts" />
+    <TypeScriptCompile Include="scripts\viewModels\logDetail.ts" />
+    <Content Include="scripts\viewModels\logDetail.js">
+      <DependentUpon>logDetail.ts</DependentUpon>
+    </Content>
+    <Content Include="scripts\viewModels\logDetail.min.js">
+      <DependentUpon>logDetail.ts</DependentUpon>
+    </Content>
+    <Content Include="scripts\viewModels\logViewer.js">
+      <DependentUpon>logViewer.ts</DependentUpon>
+    </Content>
+    <Content Include="scripts\viewModels\logViewer.min.js">
+      <DependentUpon>logViewer.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="scripts\viewModels\logViewer.ts" />
+    <TypeScriptCompile Include="scripts\services\logApiClient.ts" />
+    <Content Include="scripts\knockout.d.ts" />
+    <Content Include="scripts\services\logApiClient.js">
+      <DependentUpon>logApiClient.ts</DependentUpon>
+    </Content>
+    <Content Include="scripts\services\logApiClient.min.js">
+      <DependentUpon>logApiClient.ts</DependentUpon>
+    </Content>
+    <Content Include="scripts\viewModels\logSummary.js">
+      <DependentUpon>logSummary.ts</DependentUpon>
+    </Content>
+    <Content Include="scripts\viewModels\logSummary.min.js">
+      <DependentUpon>logSummary.ts</DependentUpon>
+    </Content>
+    <TypeScriptCompile Include="scripts\viewModels\logSummary.ts" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="scripts\app.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="scripts\app.js.map">
+      <DependentUpon>app.ts</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="scripts\viewModels\logSummary.js.map">
+      <DependentUpon>logSummary.ts</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="scripts\services\logApiClient.js.map">
+      <DependentUpon>logApiClient.ts</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="scripts\viewModels\logViewer.js.map">
+      <DependentUpon>logViewer.ts</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="scripts\interfaces.js.map">
+      <DependentUpon>interfaces.ts</DependentUpon>
+    </Content>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -46,7 +111,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerPort>8108</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:7626/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
@@ -62,6 +127,7 @@
     <TypeScriptTarget>ES3</TypeScriptTarget>
     <TypeScriptIncludeComments>true</TypeScriptIncludeComments>
     <TypeScriptSourceMap>true</TypeScriptSourceMap>
+    <TypeScriptOutfile>app.js</TypeScriptOutfile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)' == 'Release'">
     <TypeScriptTarget>ES3</TypeScriptTarget>

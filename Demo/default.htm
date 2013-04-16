@@ -5,11 +5,15 @@
     <meta charset="utf-8" />
     <title>TypeScript HTML App</title>
     <link rel="stylesheet" href="app.css" type="text/css" />
-    <script src="scripts/app.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/knockout/knockout-2.2.1.js"></script>
+    <script src="app.js" defer="defer"></script>
 </head>
 <body>
     <h1>TypeScript HTML App</h1>
 
-    <div id="content"></div>
+    <ul data-bind="foreach: logs">
+        <li data-bind="text: message"></li>
+    </ul>
 </body>
 </html>
