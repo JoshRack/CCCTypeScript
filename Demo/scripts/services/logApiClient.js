@@ -8,11 +8,13 @@ var App;
             LogApiClient.prototype.search = function (callback) {
                 var data = [
                     {
+                        id: 1,
                         eventDate: new Date(2013, 4, 27, 8, 0, 0),
                         level: "WARN",
                         message: "Some suspicious activity"
                     }, 
                     {
+                        id: 2,
                         eventDate: new Date(2013, 4, 27, 8, 1, 0),
                         level: "ERROR",
                         message: "Unhandled exception occurred"
@@ -20,7 +22,16 @@ var App;
                 ];
                 callback(data);
             };
-            LogApiClient.prototype.find = function (callback) {
+            LogApiClient.prototype.find = function (id, callback) {
+                var data = {
+                    id: 1,
+                    eventDate: new Date(2013, 4, 27, 8, 0, 0),
+                    level: "WARN",
+                    message: "Some suspicious activity",
+                    appDomain: "LM3SVC",
+                    thread: "87"
+                };
+                callback(data);
             };
             return LogApiClient;
         })();

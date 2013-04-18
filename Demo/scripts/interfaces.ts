@@ -1,4 +1,5 @@
 interface ILogSummary {
+    id: number;
     eventDate: Date;
     level: string;
     message: string;

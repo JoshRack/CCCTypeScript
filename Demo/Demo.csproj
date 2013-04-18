@@ -29,6 +29,7 @@
     <Content Include="scripts\app.min.js">
       <DependentUpon>app.ts</DependentUpon>
     </Content>
+    <Content Include="scripts\libs\jquery-1.9.1.min.js" />
     <TypeScriptCompile Include="scripts\interfaces.ts" />
     <Content Include="scripts\interfaces.js">
       <DependentUpon>interfaces.ts</DependentUpon>
@@ -36,8 +37,13 @@
     <Content Include="scripts\interfaces.min.js">
       <DependentUpon>interfaces.ts</DependentUpon>
     </Content>
-    <Content Include="scripts\jquery.d.ts" />
+    <Content Include="packages.config" />
+    <Content Include="scripts\libs\knockout-2.2.1.js" />
+    <Content Include="scripts\libs\jquery.d.ts" />
     <TypeScriptCompile Include="scripts\viewModels\logDetail.ts" />
+    <Content Include="scripts\sammy-0.7.4.js" />
+    <Content Include="scripts\libs\sammy-0.7.4.min.js" />
+    <Content Include="scripts\libs\sammyjs.d.ts" />
     <Content Include="scripts\viewModels\logDetail.js">
       <DependentUpon>logDetail.ts</DependentUpon>
     </Content>
@@ -52,7 +58,7 @@
     </Content>
     <TypeScriptCompile Include="scripts\viewModels\logViewer.ts" />
     <TypeScriptCompile Include="scripts\services\logApiClient.ts" />
-    <Content Include="scripts\knockout.d.ts" />
+    <Content Include="scripts\libs\knockout.d.ts" />
     <Content Include="scripts\services\logApiClient.js">
       <DependentUpon>logApiClient.ts</DependentUpon>
     </Content>

@@ -1,4 +1,5 @@
-/// <reference path="knockout.d.ts" />
+/// <reference path="libs/knockout.d.ts" />
+/// <reference path="libs/sammyjs.d.ts" />
 /// <reference path="services/logApiClient.ts" />
 /// <reference path="viewModels/logViewer.ts" />
 /// <reference path="interfaces.ts" />
@@ -13,7 +14,17 @@ module App {
             this.viewModel = new App.ViewModels.LogViewer();
             ko.applyBindings(this.viewModel);
 
-            this.client.search(this.viewModel.loadSearchResults);
+            var self = this;
+            Sammy(function () {
+                this.get("#:id", function () {
+                    self.client.find(this.params.id, self.viewModel.selected);
+                });
+
+                this.get("", function () {
+                    self.viewModel.selected(null);
+                    self.client.search(self.viewModel.loadSearchResults);
+                });
+            }).run();
         };
     }
 }

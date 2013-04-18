@@ -5,11 +5,12 @@ var App;
             function LogViewer() {
                 var _this = this;
                 this.logs = ko.observableArray();
+                this.selected = ko.observable();
                 this.loadSearchResults = function (data) {
                     _this.logs(data);
                 };
-                this.loadDetail = function (data) {
-                    _this.selected(data);
+                this.select = function (selectedItem) {
+                    location.hash = selectedItem.id.toString();
                 };
             }
             return LogViewer;

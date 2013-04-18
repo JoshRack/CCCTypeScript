@@ -42,7 +42,7 @@
     <ScssShowPreviewWindow>True</ScssShowPreviewWindow>
     <TypeScriptAddGeneratedFilesToProject>True</TypeScriptAddGeneratedFilesToProject>
     <TypeScriptGenerateJsFile>True</TypeScriptGenerateJsFile>
-    <TypeScriptMargin_width>662</TypeScriptMargin_width>
+    <TypeScriptMargin_width>939</TypeScriptMargin_width>
     <TypeScriptMinify>True</TypeScriptMinify>
     <TypeScriptShowPreviewWindow>True</TypeScriptShowPreviewWindow>
   </settings>

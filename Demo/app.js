@@ -24,7 +24,7 @@ var App;
 })(App || (App = {}));
 var App;
 (function (App) {
-    /// <reference path="../knockout.d.ts" />
+    /// <reference path="../libs/knockout.d.ts" />
     /// <reference path="logSummary.ts" />
     /// <reference path="logDetail.ts" />
     (function (ViewModels) {
@@ -32,11 +32,12 @@ var App;
             function LogViewer() {
                 var _this = this;
                 this.logs = ko.observableArray();
+                this.selected = ko.observable();
                 this.loadSearchResults = function (data) {
                     _this.logs(data);
                 };
-                this.loadDetail = function (data) {
-                    _this.selected(data);
+                this.select = function (selectedItem) {
+                    location.hash = selectedItem.id.toString();
                 };
             }
             return LogViewer;
@@ -62,11 +63,13 @@ var App;
                 //});
                 var data = [
                     {
+                        id: 1,
                         eventDate: new Date(2013, 4, 27, 8, 0, 0),
                         level: "WARN",
                         message: "Some suspicious activity"
                     }, 
                     {
+                        id: 2,
                         eventDate: new Date(2013, 4, 27, 8, 1, 0),
                         level: "ERROR",
                         message: "Unhandled exception occurred"
@@ -74,7 +77,16 @@ var App;
                 ];
                 callback(data);
             };
-            LogApiClient.prototype.find = function (callback) {
+            LogApiClient.prototype.find = function (id, callback) {
+                var data = {
+                    id: 1,
+                    eventDate: new Date(2013, 4, 27, 8, 0, 0),
+                    level: "WARN",
+                    message: "Some suspicious activity",
+                    appDomain: "LM3SVC",
+                    thread: "87"
+                };
+                callback(data);
             };
             return LogApiClient;
         })();
@@ -82,7 +94,8 @@ var App;
     })(App.Services || (App.Services = {}));
     var Services = App.Services;
 })(App || (App = {}));
-/// <reference path="knockout.d.ts" />
+/// <reference path="libs/knockout.d.ts" />
+/// <reference path="libs/sammyjs.d.ts" />
 /// <reference path="services/logApiClient.ts" />
 /// <reference path="viewModels/logViewer.ts" />
 /// <reference path="interfaces.ts" />
@@ -93,7 +106,16 @@ var App;
             this.client = client;
             this.viewModel = new App.ViewModels.LogViewer();
             ko.applyBindings(this.viewModel);
-            this.client.search(this.viewModel.loadSearchResults);
+            var self = this;
+            Sammy(function () {
+                this.get("#:id", function () {
+                    self.client.find(this.params.id, self.viewModel.selected);
+                });
+                this.get("", function () {
+                    self.viewModel.selected(null);
+                    self.client.search(self.viewModel.loadSearchResults);
+                });
+            }).run();
         }
         return Main;
     })();

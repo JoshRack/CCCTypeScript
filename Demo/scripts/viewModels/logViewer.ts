@@ -1,4 +1,4 @@
-/// <reference path="../knockout.d.ts" />
+/// <reference path="../libs/knockout.d.ts" />
 /// <reference path="logSummary.ts" />
 /// <reference path="logDetail.ts" />
 
@@ -8,15 +8,17 @@ module App.ViewModels {
         selected: KnockoutObservableObject;
 
         loadSearchResults: (data: ILogSummary[]) => void;
-        loadDetail: (data: ILogDetail) => void;
+        select: (selectedItem: ILogSummary) => void;
 
         constructor() {
             this.logs = ko.observableArray();
+            this.selected = ko.observable();
+
             this.loadSearchResults = (data: ILogSummary[]) => {
                 this.logs(data);
             };
-            this.loadDetail = (data: ILogDetail) => {
-                this.selected(data);
+            this.select = (selectedItem: ILogSummary) => {
+                location.hash = selectedItem.id.toString();
             };
         }
     }
