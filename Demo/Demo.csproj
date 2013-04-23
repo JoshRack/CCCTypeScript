@@ -22,6 +22,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Content Include="app.css" />
+    <Content Include="Content\bootstrap-responsive.min.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\images\glyphicons-halflings-white.png" />
+    <Content Include="Content\images\glyphicons-halflings.png" />
     <Content Include="default.htm" />
     <Content Include="scripts\app.js">
       <DependentUpon>app.ts</DependentUpon>
@@ -119,7 +123,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>8108</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:7626/</IISUrl>
+          <IISUrl>http://localhost:41000/Demo</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
@@ -133,7 +137,6 @@
     <TypeScriptTarget>ES3</TypeScriptTarget>
     <TypeScriptIncludeComments>true</TypeScriptIncludeComments>
     <TypeScriptSourceMap>true</TypeScriptSourceMap>
-    <TypeScriptOutfile>app.js</TypeScriptOutfile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)' == 'Release'">
     <TypeScriptTarget>ES3</TypeScriptTarget>

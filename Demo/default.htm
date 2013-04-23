@@ -4,16 +4,71 @@
 <head>
     <meta charset="utf-8" />
     <title>TypeScript HTML App</title>
-    <link rel="stylesheet" href="app.css" type="text/css" />
+    <link rel="stylesheet" href="Content/bootstrap.min.css" />
+    <link rel="stylesheet" href="Content/bootstrap-responsive.min.css" />
+
     <script src="scripts/libs/jquery-1.9.1.min.js"></script>
     <script src="scripts/libs/sammy-0.7.4.min.js"></script>
     <script src="scripts/libs/knockout-2.2.1.js"></script>
-    <script src="app.js" defer="defer"></script>
+    <script src="scripts/libs/knockout-2.2.1.js"></script>
+    <script src="scripts/services/logApiClient.js"></script>
+    <script src="scripts/viewModels/logViewer.js"></script>
+    <script src="scripts/viewModels/logSummary.js"></script>
+    <script src="scripts/viewModels/logDetail.js"></script>
+    <script src="scripts/app.js"></script>
+    <!--<script src="app.js" defer="defer"></script>-->
 </head>
 <body>
     <h1>TypeScript HTML App</h1>
+    
+    <div class="row-fluid">
+	    <div class="span6">
+		    <table class="table table-striped">
+			    <thead>
+				    <tr>
+					    <th>
+						    #
+					    </th>
+					    <th>
+						    Event Date
+					    </th>
+					    <th>
+						    Level
+					    </th>
+					    <th>
+						    Message
+					    </th>
+				    </tr>
+			    </thead>
+			    <tbody data-bind="foreach: logs">
+				    <tr data-bind="click: $parent.select">
+					    <td data-bind="text: id"></td>
+					    <td data-bind="text: eventDate"></td>
+					    <td data-bind="text: level"></td>
+					    <td data-bind="text: message"></td>
+				    </tr>
+			    </tbody>
+		    </table>
+	    </div>
+	    <div class="span6">
+		    <dl data-bind="with: selected">
+                <dt>Id</dt>
+                <dl data-bind="text: id"></dl>
+                <dt>Event Date</dt>
+                <dl data-bind="text: eventDate"></dl>
+                <dt>Level</dt>
+                <dl data-bind="text: level"></dl>
+                <dt>Message</dt>
+                <dl data-bind="text: message"></dl>
+                <dt>App Domain</dt>
+                <dl data-bind="text: appDomain"></dl>
+                <dt>Thread</dt>
+                <dl data-bind="text: thread"></dl>
+		    </dl>
+	    </div>
+    </div>
 
-    <ul data-bind="foreach: logs, visible: selected() == null">
+    <!--<ul data-bind="foreach: logs, visible: selected() == null">
         <li data-bind="text: message, click: $parent.select"></li>
     </ul>
     
@@ -32,6 +87,6 @@
             <dt>Thread</dt>
             <dl data-bind="text: thread"></dl>
         </dd>
-    </div>
+    </div>-->
 </body>
 </html>

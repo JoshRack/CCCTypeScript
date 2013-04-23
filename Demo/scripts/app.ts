@@ -1,3 +1,4 @@
+/// <reference path="libs/jquery.d.ts" />
 /// <reference path="libs/knockout.d.ts" />
 /// <reference path="libs/sammyjs.d.ts" />
 /// <reference path="services/logApiClient.ts" />
@@ -29,5 +30,8 @@ module App {
     }
 }
 
-var client = new App.Services.LogApiClient("http://localhost/api/logs")
-var app = new App.Main(client);
+$(function () {
+    var client = new App.Services.LogApiClient("http://localhost:41000/api/logs")
+    var app = new App.Main(client);
+})
+

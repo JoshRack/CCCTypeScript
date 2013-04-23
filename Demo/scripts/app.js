@@ -1,3 +1,9 @@
+/// <reference path="libs/jquery.d.ts" />
+/// <reference path="libs/knockout.d.ts" />
+/// <reference path="libs/sammyjs.d.ts" />
+/// <reference path="services/logApiClient.ts" />
+/// <reference path="viewModels/logViewer.ts" />
+/// <reference path="interfaces.ts" />
 var App;
 (function (App) {
     var Main = (function () {
@@ -20,5 +26,8 @@ var App;
     })();
     App.Main = Main;    
 })(App || (App = {}));
-var client = new App.Services.LogApiClient("http://localhost/api/logs");
-var app = new App.Main(client);
+$(function () {
+    var client = new App.Services.LogApiClient("http://localhost:41000/api/logs");
+    var app = new App.Main(client);
+});
+//@ sourceMappingURL=app.js.map

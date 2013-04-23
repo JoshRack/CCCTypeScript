@@ -1,0 +1,1 @@
+{"version":3,"file":"logDetail.js","sources":["logDetail.ts"],"names":["App","App.ViewModels","App.ViewModels.LogDetail","App.ViewModels.LogDetail.constructor"],"mappings":"AAEA,IAAO,GAAG;AAST,CATD,UAAO,GAAG;IAFVA,yCAAyCA;KAElCA,UAAIA,UAAUA;QACjBC;YAAAC;AAOCA,YAADA;AAACA,QAADA,CAACA,IAAAD;QAPDA,iCAOCA,QAAAA;IACLA,CAACA,2CAAAD;IATMA;AASNA,CAAAA,qBAAA"}

@@ -1,5 +1,8 @@
 var App;
 (function (App) {
+    /// <reference path="../libs/knockout.d.ts" />
+    /// <reference path="logSummary.ts" />
+    /// <reference path="logDetail.ts" />
     (function (ViewModels) {
         var LogViewer = (function () {
             function LogViewer() {
@@ -19,3 +22,4 @@ var App;
     })(App.ViewModels || (App.ViewModels = {}));
     var ViewModels = App.ViewModels;
 })(App || (App = {}));
+//@ sourceMappingURL=logViewer.js.map
