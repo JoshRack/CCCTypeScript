@@ -21,7 +21,6 @@
     <UpgradeBackupLocation />
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="app.css" />
     <Content Include="Content\bootstrap-responsive.min.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\images\glyphicons-halflings-white.png" />
@@ -45,7 +44,6 @@
     <Content Include="scripts\libs\knockout-2.2.1.js" />
     <Content Include="scripts\libs\jquery.d.ts" />
     <TypeScriptCompile Include="scripts\viewModels\logDetail.ts" />
-    <Content Include="scripts\sammy-0.7.4.js" />
     <Content Include="scripts\libs\sammy-0.7.4.min.js" />
     <Content Include="scripts\libs\sammyjs.d.ts" />
     <Content Include="scripts\viewModels\logDetail.js">
