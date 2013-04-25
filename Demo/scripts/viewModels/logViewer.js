@@ -10,10 +10,17 @@ var App;
                 this.logs = ko.observableArray();
                 this.selected = ko.observable();
                 this.loadSearchResults = function (data) {
-                    _this.logs(data);
+                    var summaries = [];
+                    for(var i = 0; i < data.length; i++) {
+                        summaries.push(new App.ViewModels.LogSummary(data[i]));
+                    }
+                    _this.logs(summaries);
                 };
                 this.select = function (selectedItem) {
                     location.hash = selectedItem.id.toString();
+                };
+                this.setSelected = function (data) {
+                    _this.selected(new App.ViewModels.LogDetail(data));
                 };
             }
             return LogViewer;

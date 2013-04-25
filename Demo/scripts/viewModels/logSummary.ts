@@ -6,5 +6,23 @@ module App.ViewModels {
         eventDate: Date;
         level: string;
         message: string;
+
+        constructor(jsonData: ILogSummary) {
+            this.id = jsonData.id;
+            this.eventDate = jsonData.eventDate;
+            this.level = jsonData.level;
+            this.message = jsonData.message;
+        }
+
+        get rowClass(): string {
+            switch (this.level) {
+                case "ERROR":
+                    return "error";
+                case "WARN":
+                    return "warning";
+                default:
+                    return "info";
+            }
+        };
     }
 }

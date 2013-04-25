@@ -18,7 +18,7 @@ module App {
             var self = this;
             Sammy(function () {
                 this.get("#:id", function () {
-                    self.client.find(this.params.id, self.viewModel.selected);
+                    self.client.find(this.params.id, self.viewModel.setSelected);
                 });
 
                 this.get("", function () {

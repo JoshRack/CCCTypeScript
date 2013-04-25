@@ -41,9 +41,11 @@
     <JsHintEnable>True</JsHintEnable>
     <JsHintErrorLocation>2</JsHintErrorLocation>
     <KeepImportantComments>false</KeepImportantComments>
-    <LessGenerateCssFile>True</LessGenerateCssFile>
-    <LessMinify>True</LessMinify>
-    <LessShowPreviewWindow>True</LessShowPreviewWindow>
+    <LessCompileOnBuild>false</LessCompileOnBuild>
+    <LessCompileToFolder>false</LessCompileToFolder>
+    <LessGenerateCssFile>true</LessGenerateCssFile>
+    <LessMinify>true</LessMinify>
+    <LessShowPreviewWindow>true</LessShowPreviewWindow>
     <ScssGenerateCssFile>True</ScssGenerateCssFile>
     <ScssMinify>True</ScssMinify>
     <ScssShowPreviewWindow>True</ScssShowPreviewWindow>
@@ -52,7 +54,7 @@
     <TypeScriptCompileOnBuild>false</TypeScriptCompileOnBuild>
     <TypeScriptGenerateJsFile>true</TypeScriptGenerateJsFile>
     <TypeScriptKeepComments>false</TypeScriptKeepComments>
-    <TypeScriptMargin_width>939</TypeScriptMargin_width>
+    <TypeScriptMargin_width>664</TypeScriptMargin_width>
     <TypeScriptMinify>true</TypeScriptMinify>
     <TypeScriptProduceSourceMap>false</TypeScriptProduceSourceMap>
     <TypeScriptResaveWithUtf8BOM>false</TypeScriptResaveWithUtf8BOM>
