@@ -1,8 +1,5 @@
 var App;
 (function (App) {
-    /// <reference path="../libs/knockout.d.ts" />
-    /// <reference path="logSummary.ts" />
-    /// <reference path="logDetail.ts" />
     (function (ViewModels) {
         var LogViewer = (function () {
             function LogViewer() {
@@ -16,17 +13,16 @@ var App;
                     }
                     _this.logs(summaries);
                 };
-                this.select = function (selectedItem) {
-                    location.hash = selectedItem.id.toString();
-                };
                 this.setSelected = function (data) {
                     _this.selected(new App.ViewModels.LogDetail(data));
                 };
             }
+            LogViewer.prototype.select = function (selectedItem) {
+                location.hash = selectedItem.id.toString();
+            };
             return LogViewer;
         })();
         ViewModels.LogViewer = LogViewer;        
     })(App.ViewModels || (App.ViewModels = {}));
     var ViewModels = App.ViewModels;
 })(App || (App = {}));
-//@ sourceMappingURL=logViewer.js.map

@@ -1,13 +1,15 @@
+var __extends = this.__extends || function (d, b) {
+    function __() { this.constructor = d; }
+    __.prototype = b.prototype;
+    d.prototype = new __();
+};
 var App;
 (function (App) {
-    /// <reference path="../interfaces.ts" />
     (function (ViewModels) {
-        var LogDetail = (function () {
+        var LogDetail = (function (_super) {
+            __extends(LogDetail, _super);
             function LogDetail(jsonData) {
-                this.id = jsonData.id;
-                this.eventDate = jsonData.eventDate;
-                this.level = jsonData.level;
-                this.message = jsonData.message;
+                        _super.call(this, jsonData);
                 this.appDomain = jsonData.appDomain;
                 this.thread = jsonData.thread;
             }
@@ -22,9 +24,8 @@ var App;
                 }
             };
             return LogDetail;
-        })();
+        })(ViewModels.LogSummary);
         ViewModels.LogDetail = LogDetail;        
     })(App.ViewModels || (App.ViewModels = {}));
     var ViewModels = App.ViewModels;
 })(App || (App = {}));
-//@ sourceMappingURL=logDetail.js.map

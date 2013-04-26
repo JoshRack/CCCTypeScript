@@ -1,11 +1,8 @@
 /// <reference path="../interfaces.ts" />
+/// <reference path="logSummary.ts" />
 
 module App.ViewModels {
-    export class LogDetail implements ILogDetail {
-        id: number;
-        eventDate: Date;
-        level: string;
-        message: string;
+    export class LogDetail implements ILogDetail extends LogSummary {
         appDomain: string;
         thread: string;
 
@@ -21,10 +18,7 @@ module App.ViewModels {
         };
 
         constructor(jsonData: ILogDetail) {
-            this.id = jsonData.id;
-            this.eventDate = jsonData.eventDate;
-            this.level = jsonData.level;
-            this.message = jsonData.message;
+            super(jsonData);
             this.appDomain = jsonData.appDomain;
             this.thread = jsonData.thread;
         }

@@ -8,7 +8,6 @@ module App.ViewModels {
         selected: KnockoutObservableObject;
 
         loadSearchResults: (data: ILogSummary[]) => void;
-        select: (selectedItem: ILogSummary) => void;
         setSelected: (data: ILogDetail) => void;
 
         constructor() {
@@ -22,12 +21,13 @@ module App.ViewModels {
                 }
                 this.logs(summaries);
             };
-            this.select = (selectedItem: ILogSummary) => {
-                location.hash = selectedItem.id.toString();
-            };
             this.setSelected = (data: ILogDetail) => {
                 this.selected(new App.ViewModels.LogDetail(data));
             };
+        }
+
+        select(selectedItem: ILogSummary) {
+            location.hash = selectedItem.id.toString();
         }
     }
 }
